@@ -36,7 +36,7 @@ contract Ownable {
     }
 
     //  5) create an event that emits anytime ownerShip is transfered (including in the constructor)
-    event TransferOwnership(address indexed oldOwner, address index newOwner);
+    event TransferOwnership(address indexed oldOwner, address indexed newOwner);
 }
 
 //  TODO's: Create a Pausable contract that inherits from the Ownable contract
@@ -494,8 +494,8 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 
     // TODO: create external getter functions for name, symbol, and baseTokenURI
     //getter for name
-    funtion getTokenName() external view returns(string) {
-        return token_name
+    function getTokenName() external view returns(string) {
+        return token_name;
     }
     //getter for symbol
     function getSymbol() external view returns(string) {
