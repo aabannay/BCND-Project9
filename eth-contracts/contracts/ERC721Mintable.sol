@@ -44,7 +44,7 @@ contract Pausable is Ownable {
     //  1) create a private '_paused' variable of type bool
     bool private _paused; 
     //  2) create a public setter using the inherited onlyOwner modifier 
-    function setPaused(bool newValue) onlyOwner()
+    function setPaused(bool newValue) public onlyOwner()
     {
         _paused = newValue; 
     }
@@ -60,6 +60,7 @@ contract Pausable is Ownable {
 
     modifier paused() {
         require(_paused, 'Contract should be paused!');
+        _;
     }
     //  5) create a Paused & Unpaused event that emits the address that triggered the event
     event Paused(address indexed account);
@@ -472,7 +473,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     string private _baseTokenURI; 
 
     // TODO: create private mapping of tokenId's to token uri's called '_tokenURIs'
-    mapping(string => string) private _tokenURIs; 
+    mapping(uint256 => string) private _tokenURIs; 
 
     bytes4 private constant _INTERFACE_ID_ERC721_METADATA = 0x5b5e139f;
     /*
@@ -494,15 +495,15 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 
     // TODO: create external getter functions for name, symbol, and baseTokenURI
     //getter for name
-    function getTokenName() external view returns(string) {
+    function getTokenName() external view returns(string memory) {
         return token_name;
     }
     //getter for symbol
-    function getSymbol() external view returns(string) {
+    function getSymbol() external view returns(string memory) {
         return _symbol; 
     }
     //getter for base token URI
-    function getBaseTokenURI() external view returns(string) {
+    function getBaseTokenURI() external view returns(string memory) {
         return _baseTokenURI; 
     }
 
@@ -536,7 +537,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 //      -calls the superclass mint and setTokenURI functions
 
 contract CustomERC721Token is ERC721Metadata("Arabian Coin", "ARBO", "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/") {
-    function mint(address to, uint256 tokenId, string tokenURI) public onlyOwner() returns(bool) {
+    function mint(address to, uint256 tokenId, string memory tokenURI) public onlyOwner() returns(bool) {
         super._mint(to, tokenId);
         super.setTokenURI(tokenId);
         return true; 
