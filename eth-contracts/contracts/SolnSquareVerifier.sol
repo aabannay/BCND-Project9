@@ -18,7 +18,7 @@ contract SolnSquareVerifier is CustomERC721Token, Verifier {
     Solution[] solutionsArray;
 
     // TODO define a mapping to store unique solutions submitted
-    mapping(bytes32 => Solution) uniqueSolutions; 
+    mapping(bytes32 => Solution) private uniqueSolutions; 
 
     // TODO Create an event to emit when a solution is added
     event SolutionAdded(address owner, uint256 tokenId);
@@ -45,7 +45,7 @@ contract SolnSquareVerifier is CustomERC721Token, Verifier {
             uint[2] memory c_p,
             uint[2] memory h,
             uint[2] memory k,
-            uint[2] memory input) public onlyOwner() {
+            uint[2] memory input) public onlyOwner() returns(bool) {
         
         bool valid = super.verifyTx(a, a_p, b, b_p, c, c_p, h, k, input);
         require(valid, 'Solution is not valid!');
@@ -53,6 +53,8 @@ contract SolnSquareVerifier is CustomERC721Token, Verifier {
         bytes32 unique = keccak256(abi.encodePacked(a, a_p, b, b_p, c, c_p, h, k, input));
         addUniqueSolution(owner, tokenId, unique);
 
+        super.mint(owner, tokenId, tokenURI);
+        return true; 
         //TODO handle metadata and tokenSupply!
         //this is handled by inhiretance. 
     }
