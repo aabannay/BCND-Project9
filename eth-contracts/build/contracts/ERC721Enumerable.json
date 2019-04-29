@@ -9071,10 +9071,10 @@
           }
         ],
         "contractDependencies": [
-          661,
           77,
           129,
-          175
+          175,
+          661
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -12744,11 +12744,11 @@
           }
         ],
         "contractDependencies": [
-          661,
           77,
           129,
-          959,
           175,
+          661,
+          959,
           7433
         ],
         "contractKind": "contract",
@@ -14172,12 +14172,12 @@
           }
         ],
         "contractDependencies": [
-          661,
           77,
           129,
-          959,
           175,
+          661,
           1073,
+          959,
           7433
         ],
         "contractKind": "contract",
@@ -23191,10 +23191,10 @@
           }
         ],
         "contractDependencies": [
-          661,
           77,
           129,
-          175
+          175,
+          661
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -26864,11 +26864,11 @@
           }
         ],
         "contractDependencies": [
-          661,
           77,
           129,
-          959,
           175,
+          661,
+          959,
           7433
         ],
         "contractKind": "contract",
@@ -28292,12 +28292,12 @@
           }
         ],
         "contractDependencies": [
-          661,
           77,
           129,
-          959,
           175,
+          661,
           1073,
+          959,
           7433
         ],
         "contractKind": "contract",
@@ -28671,7 +28671,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.8",
-  "updatedAt": "2019-04-28T17:57:44.984Z",
+  "updatedAt": "2019-04-29T14:12:09.306Z",
   "devdoc": {
     "methods": {
       "constructor": {
