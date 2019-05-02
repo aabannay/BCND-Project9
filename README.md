@@ -17,7 +17,7 @@ The contract is deployed on the following address
 ```
 0x38BE8aaC33582A5962aE60B44c9e322A06532b52
 ```
-The ABI of the contract is in [this JSON file](./SolnSquareVerifier ABI Code.JSON).
+The ABI of the contract is in [this JSON file](SolnSquareVerifier ABI Code.JSON).
 Finally, OpenSea Store Front is  [Arabian Coin V2](https://rinkeby.opensea.io/assets/arabiancoinv2).
 
 # Project Resources
