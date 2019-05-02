@@ -33,7 +33,7 @@ async function main() {
         //current proof
         //let currentProof = proof[i];
         // Creatures issued directly to the owner.
-        //for (var i = 0; i < NUM_CREATURES; i++) {
+        for (var i = 0; i < NUM_CREATURES; i++) {
             try {
                 //mint using the inhireted method (no need for a proof)
                 console.log('inside try');
@@ -43,7 +43,7 @@ async function main() {
             } catch (e) {
                 console.log(`Encountered error while minting`, e.message);
             }
-       // }
+       }
 
     }
     console.log('end!');
